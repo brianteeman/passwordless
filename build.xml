@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project name="AkeebaPasswordlessLogin" description="Akeeba Passwordless Login" default="git" >
-	<import file="${phing.dir}/../../buildfiles/phing/common.xml" />
+	<import file="${phing.dir}/../buildfiles/phing/common.xml" />
 
 	<!--
 	====================================================================================================
@@ -89,31 +89,7 @@
 		<exclude name="media/vendor/web-auth/webauthn-lib/LICENSE" />
 	</patternset>
 
-	<target name="package-pkg" description="Installation package" depends="new-release, setup-properties, package-plugins">
+	<target name="XXXpackage-pkg" description="Installation package" depends="new-release, setup-properties, package-plugins">
 		<!-- Dependencies are enough -->
-	</target>
-
-	<target name="composer-install">
-		<!-- Nope. Because of the use of Rector we need to do this VERY sporadically. -->
-	</target>
-
-	<!--
-	====================================================================================================
-	Tasks - Documentation
-	====================================================================================================
-	-->
-
-	<target name="documentation" description="The documentation">
-		<echo message="The documentation can be found in the repository's Wiki on GitHub. This task is obsolete." />
-	</target>
-
-	<!--
-	====================================================================================================
-	Tasks - Project management
-	====================================================================================================
-	-->
-
-	<target name="docsdeploy">
-		<echo message="The documentation can be found in the repository's Wiki on GitHub. This task is obsolete." />
 	</target>
 </project>

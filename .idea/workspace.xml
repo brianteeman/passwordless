@@ -25,7 +25,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Post-installation script update" />
+    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Post-installation script update">
+      <change afterPath="$PROJECT_DIR$/.idea/codeception.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phing.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/build.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/templates/link.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +128,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nicholas/Projects/j4-akeeba/passwordless&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/nicholas/Projects/j4-akeeba/sociallogin&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -145,11 +154,11 @@
       <recent name="$PROJECT_DIR$/plugins/system/passwordless/sql/updates/postgresql" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu\home\nicholas\Projects\j4-akeeba\passwordless" />
       <recent name="$PROJECT_DIR$/plugins/system/passwordless/media/images" />
       <recent name="$PROJECT_DIR$/plugins/system/passwordless/forms" />
       <recent name="$PROJECT_DIR$/build" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/plugins/system/passwordless/src/Field" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.scratch_14.php">
@@ -190,7 +199,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-74080bdb84d3-com.jetbrains.php.sharedIndexes-PS-233.11799.232" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PS-241.18034.69" />
+        <option value="bundled-php-predefined-ba97393d7c68-48a1a656d44e-com.jetbrains.php.sharedIndexes-PS-241.18034.69" />
       </set>
     </attachedChunks>
   </component>
@@ -258,6 +268,8 @@
       <workItem from="1693825543521" duration="1771000" />
       <workItem from="1693950145571" duration="244000" />
       <workItem from="1701944809289" duration="6000" />
+      <workItem from="1721767899198" duration="32000" />
+      <workItem from="1721937136267" duration="777000" />
     </task>
     <task id="LOCAL-00015" summary="Show plugin options depending on Joomla version">
       <created>1597041771075</created>
