@@ -89,7 +89,28 @@
 		<exclude name="media/vendor/web-auth/webauthn-lib/LICENSE" />
 	</patternset>
 
-	<target name="XXXpackage-pkg" description="Installation package" depends="new-release, setup-properties, package-plugins">
-		<!-- Dependencies are enough -->
+	<target name="git" description="Makes only packages, not the documentation"
+			depends="new-release,setup-properties,compile-javascript,component-packages">
 	</target>
+
+	<target name="compile-javascript" description="Transpile and minify JavaScript files">
+		<exec executable="${dirs.root}/../buildfiles/node_modules/.bin/babel"
+			  dir="${dirs.root}" checkreturn="true">
+			<env key="NODE_PATH" value="${dirs.root}/../buildfiles/node_modules" />
+
+			<arg value="plugins/system/passwordless/media/js" />
+
+			<arg value="--config-file" />
+			<arg value="${dirs.root}/.babelrc.json" />
+
+			<arg value="--out-dir" />
+			<arg value="plugins/system/passwordless/media/js" />
+
+			<arg value="--out-file-extension" />
+			<arg value=".min.js" />
+
+			<arg value="--source-maps" />
+		</exec>
+	</target>
+
 </project>
