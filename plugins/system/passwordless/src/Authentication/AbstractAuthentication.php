@@ -9,15 +9,15 @@ namespace Akeeba\Plugin\System\Passwordless\Authentication;
 
 defined('_JEXEC') or die();
 
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialDescriptor;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialSourceRepository;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialUserEntity;
 use Exception;
 use Joomla\Application\ApplicationInterface;
 use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\User\User;
 use Joomla\Session\SessionInterface;
-use Webauthn\PublicKeyCredentialDescriptor;
-use Webauthn\PublicKeyCredentialSourceRepository;
-use Webauthn\PublicKeyCredentialUserEntity;
 
 /**
  * Helper class to aid in credentials creation (link an authenticator to a user account)
@@ -76,12 +76,7 @@ abstract class AbstractAuthentication implements AuthenticationInterface
 		?PublicKeyCredentialSourceRepository $credRepo = null
 	)
 	{
-		if (!class_exists(\Webauthn\Server::class))
-		{
-			return new LibraryV4($app, $session, $credRepo);
-		}
-
-		return new LibraryV3($app, $session, $credRepo);
+		return new LibraryV4($app, $session, $credRepo);
 	}
 
 	/**

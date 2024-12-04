@@ -11,7 +11,6 @@ namespace Akeeba\Plugin\System\Passwordless\PluginTraits;
 
 defined('_JEXEC') or die();
 
-use Joomla\CMS\Factory;
 use Joomla\CMS\User\User;
 use Joomla\Event\Event;
 

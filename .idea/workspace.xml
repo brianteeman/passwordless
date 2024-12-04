@@ -25,15 +25,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Post-installation script update">
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Use Babel from BuildFiles&#10;&#10;Reduces the footprint of the working copy.">
+      <change afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Dependencies/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Akeeba Passwordless Authentication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Akeeba Passwordless Authentication.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeception.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeception.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/phing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phing.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/build.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/services/provider.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/services/provider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/AbstractAuthentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/AbstractAuthentication.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/AuthenticationInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/AuthenticationInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV3/AndroidKeyAttestationStatementSupport.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV3/AppleAttestationStatementSupport.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV3/FidoU2FAttestationStatementSupport.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV3/Server.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV4.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/CredentialRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/CredentialRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerCreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerCreate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerInitCreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerInitCreate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update/plg_system_passwordless.xml" beforeDir="false" afterPath="$PROJECT_DIR$/update/plg_system_passwordless.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,13 +124,44 @@
       </server>
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP (Default version)">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="php">
     <include_path>
       <path value="$PROJECT_DIR$/../../master/joomla5" />
       <path value="$PROJECT_DIR$/../../dionysopoulos/joomlatypehints/generated_hints" />
       <path value="$USER_HOME$/Sites/boot5--" />
       <path value="$USER_HOME$/Sites/boot5/configuration.php" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/coenjacobs/mozart" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/spomky-labs/pki-framework" />
+      <path value="$PROJECT_DIR$/vendor/spomky-labs/cbor-php" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/web-auth/cose-lib" />
+      <path value="$PROJECT_DIR$/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/vendor/web-auth/webauthn-lib" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -135,13 +186,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "watcher.settings",
+    "settings.editor.selected.configurable": "copyright.profiles",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "PHP",
       "GitIgnore",
+      "PHP",
       "HTTP Request"
     ]
   }
@@ -155,11 +206,11 @@
       <recent name="$PROJECT_DIR$/plugins/system/passwordless/sql/updates/postgresql" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="\\wsl.localhost\Ubuntu\home\nicholas\Projects\j4-akeeba\passwordless" />
-      <recent name="$PROJECT_DIR$/plugins/system/passwordless/media/images" />
-      <recent name="$PROJECT_DIR$/plugins/system/passwordless/forms" />
+      <recent name="$PROJECT_DIR$/plugins/system/passwordless" />
       <recent name="$PROJECT_DIR$/build" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="\\wsl.localhost\Ubuntu\home\nicholas\Projects\j4-akeeba\passwordless" />
+      <recent name="$PROJECT_DIR$/plugins/system/passwordless/media/images" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.scratch_14.php">
@@ -202,6 +253,7 @@
       <set>
         <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PS-243.21565.202" />
         <option value="bundled-php-predefined-a98d8de5180a-5fbe0c30323e-com.jetbrains.php.sharedIndexes-PS-243.21565.202" />
+        <option value="php-symfony_console-5543a6ebd44f-ead811f9" />
       </set>
     </attachedChunks>
   </component>
@@ -273,7 +325,9 @@
       <workItem from="1721937136267" duration="777000" />
       <workItem from="1731924827758" duration="46000" />
       <workItem from="1732529136839" duration="60000" />
-      <workItem from="1732699661019" duration="390000" />
+      <workItem from="1732699661019" duration="425000" />
+      <workItem from="1733165345531" duration="25000" />
+      <workItem from="1733313352208" duration="12118000" />
     </task>
     <task id="LOCAL-00015" summary="Show plugin options depending on Joomla version">
       <created>1597041771075</created>
@@ -618,7 +672,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670423063479</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,7 +720,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Exclude unused files from the vendor directory" />
     <MESSAGE value="Plugin causes an error when saving a user from Joomla's Users page" />
     <MESSAGE value="Refactor to the state of my core PR" />
     <MESSAGE value="Adding missing dependencies and make sure it all works" />
@@ -691,7 +744,8 @@
     <MESSAGE value="Make sure Joomla will invalidate the autoload_psr4.php file on update." />
     <MESSAGE value="Workaround for Joomla extensions update sucking&#10;&#10;Joomla does not OPcache-invalidate files when updating an extension. I have to do it by myself." />
     <MESSAGE value="Post-installation script update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Post-installation script update" />
+    <MESSAGE value="Use Babel from BuildFiles&#10;&#10;Reduces the footprint of the working copy." />
+    <option name="LAST_COMMIT_MESSAGE" value="Use Babel from BuildFiles&#10;&#10;Reduces the footprint of the working copy." />
   </component>
   <component name="WordPressConfiguration">
     <wordpressPath />

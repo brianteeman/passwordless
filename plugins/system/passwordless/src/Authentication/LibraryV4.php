@@ -9,43 +9,43 @@ namespace Akeeba\Plugin\System\Passwordless\Authentication;
 
 defined('_JEXEC') or die();
 
-use Cose\Algorithm\Manager;
-use Cose\Algorithm\Signature\ECDSA;
-use Cose\Algorithm\Signature\EdDSA;
-use Cose\Algorithm\Signature\RSA;
-use Cose\Algorithms;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Cose\Algorithm\Manager;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Cose\Algorithm\Signature\ECDSA;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Cose\Algorithm\Signature\EdDSA;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Cose\Algorithm\Signature\RSA;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Cose\Algorithms;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Laminas\Diactoros\ServerRequestFactory;
+use Akeeba\Plugin\System\Passwordless\Dependencies\ParagonIE\ConstantTime\Base64;
+use Akeeba\Plugin\System\Passwordless\Dependencies\ParagonIE\ConstantTime\Base64UrlSafe;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AttestationStatement\AndroidKeyAttestationStatementSupport;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AttestationStatement\AppleAttestationStatementSupport;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AttestationStatement\AttestationObjectLoader;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AttestationStatement\AttestationStatementSupportManager;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AttestationStatement\FidoU2FAttestationStatementSupport;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AttestationStatement\NoneAttestationStatementSupport;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AttestationStatement\PackedAttestationStatementSupport;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AttestationStatement\TPMAttestationStatementSupport;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AuthenticationExtensions\AuthenticationExtensionsClientInputs;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AuthenticationExtensions\ExtensionOutputCheckerHandler;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AuthenticatorAssertionResponse;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AuthenticatorAssertionResponseValidator;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AuthenticatorAttestationResponse;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AuthenticatorAttestationResponseValidator;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\AuthenticatorSelectionCriteria;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialCreationOptions;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialDescriptor;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialLoader;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialParameters;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialRequestOptions;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialRpEntity;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialSource;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\TokenBinding\TokenBindingNotSupportedHandler;
 use Exception;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Log\Log;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\User\User;
-use Laminas\Diactoros\ServerRequestFactory;
-use ParagonIE\ConstantTime\Base64;
-use ParagonIE\ConstantTime\Base64UrlSafe;
 use RuntimeException;
-use Webauthn\AttestationStatement\AndroidKeyAttestationStatementSupport;
-use Webauthn\AttestationStatement\AppleAttestationStatementSupport;
-use Webauthn\AttestationStatement\AttestationObjectLoader;
-use Webauthn\AttestationStatement\AttestationStatementSupportManager;
-use Webauthn\AttestationStatement\FidoU2FAttestationStatementSupport;
-use Webauthn\AttestationStatement\NoneAttestationStatementSupport;
-use Webauthn\AttestationStatement\PackedAttestationStatementSupport;
-use Webauthn\AttestationStatement\TPMAttestationStatementSupport;
-use Webauthn\AuthenticationExtensions\AuthenticationExtensionsClientInputs;
-use Webauthn\AuthenticationExtensions\ExtensionOutputCheckerHandler;
-use Webauthn\AuthenticatorAssertionResponse;
-use Webauthn\AuthenticatorAssertionResponseValidator;
-use Webauthn\AuthenticatorAttestationResponse;
-use Webauthn\AuthenticatorAttestationResponseValidator;
-use Webauthn\AuthenticatorSelectionCriteria;
-use Webauthn\PublicKeyCredentialCreationOptions;
-use Webauthn\PublicKeyCredentialDescriptor;
-use Webauthn\PublicKeyCredentialLoader;
-use Webauthn\PublicKeyCredentialParameters;
-use Webauthn\PublicKeyCredentialRequestOptions;
-use Webauthn\PublicKeyCredentialRpEntity;
-use Webauthn\PublicKeyCredentialSource;
-use Webauthn\TokenBinding\TokenBindingNotSupportedHandler;
 
 /**
  * Authentication helper for the PHP WebAuthn library version 4, included in Joomla 5
@@ -58,7 +58,8 @@ class LibraryV4 extends AbstractAuthentication
 	/**
 	 * @inheritDoc
 	 */
-	final public function getPubKeyCreationOptions(User $user, bool $resident = false): PublicKeyCredentialCreationOptions
+	final public function getPubKeyCreationOptions(User $user, bool $resident = false
+	): PublicKeyCredentialCreationOptions
 	{
 		$siteName = $this->app->get('sitename', 'Joomla! Site');
 
@@ -149,7 +150,10 @@ class LibraryV4 extends AbstractAuthentication
 		$publicKeyCredentialCreationOptions->setExtensions($extensions);
 
 		// Save data in the session
-		$this->session->set('plg_system_passwordless.publicKeyCredentialCreationOptions', base64_encode(serialize($publicKeyCredentialCreationOptions)));
+		$this->session->set(
+			'plg_system_passwordless.publicKeyCredentialCreationOptions',
+			base64_encode(serialize($publicKeyCredentialCreationOptions))
+		);
 		$this->session->set('plg_system_passwordless.registration_user_id', $user->id);
 
 		return $publicKeyCredentialCreationOptions;
@@ -158,14 +162,17 @@ class LibraryV4 extends AbstractAuthentication
 	/**
 	 * @inheritDoc
 	 */
-    final public function validateAttestationResponse(string $data): PublicKeyCredentialSource
+	final public function validateAttestationResponse(string $data): PublicKeyCredentialSource
 	{
 		// Retrieve the PublicKeyCredentialCreationOptions object created earlier and perform sanity checks
 		$encodedOptions = $this->session->get('plg_system_passwordless.publicKeyCredentialCreationOptions', null);
 
 		if (empty($encodedOptions))
 		{
-			Log::add('Cannot retrieve plg_system_passwordless.publicKeyCredentialCreationOptions from the session', Log::NOTICE, 'plg_system_passwordless');
+			Log::add(
+				'Cannot retrieve plg_system_passwordless.publicKeyCredentialCreationOptions from the session',
+				Log::NOTICE, 'plg_system_passwordless'
+			);
 
 			throw new RuntimeException(Text::_('PLG_SYSTEM_PASSWORDLESS_ERR_CREATE_NO_PK'));
 		}
@@ -177,11 +184,15 @@ class LibraryV4 extends AbstractAuthentication
 		}
 		catch (Exception $e)
 		{
-			Log::add('The plg_system_passwordless.publicKeyCredentialCreationOptions in the session is invalid', Log::NOTICE, 'plg_system_passwordless');
+			Log::add(
+				'The plg_system_passwordless.publicKeyCredentialCreationOptions in the session is invalid', Log::NOTICE,
+				'plg_system_passwordless'
+			);
 			$publicKeyCredentialCreationOptions = null;
 		}
 
-		if (!is_object($publicKeyCredentialCreationOptions) || !($publicKeyCredentialCreationOptions instanceof PublicKeyCredentialCreationOptions))
+		if (!is_object($publicKeyCredentialCreationOptions)
+		    || !($publicKeyCredentialCreationOptions instanceof PublicKeyCredentialCreationOptions))
 		{
 			throw new RuntimeException(Text::_('PLG_SYSTEM_PASSWORDLESS_ERR_CREATE_NO_PK'));
 		}
@@ -193,7 +204,10 @@ class LibraryV4 extends AbstractAuthentication
 
 		if (($myUser->guest) || ($myUserId != $storedUserId))
 		{
-			$message = sprintf('Invalid user! We asked the authenticator to attest user ID %d, the current user ID is %d', $storedUserId, $myUserId);
+			$message = sprintf(
+				'Invalid user! We asked the authenticator to attest user ID %d, the current user ID is %d',
+				$storedUserId, $myUserId
+			);
 			Log::add($message, Log::NOTICE, 'plg_system_passwordless');
 
 			throw new RuntimeException(Text::_('PLG_SYSTEM_PASSWORDLESS_ERR_CREATE_INVALID_USER'));
@@ -286,10 +300,10 @@ class LibraryV4 extends AbstractAuthentication
 	/**
 	 * @inheritDoc
 	 */
-    final public function getPubkeyRequestOptions(?User $user): ?PublicKeyCredentialRequestOptions
+	final public function getPubkeyRequestOptions(?User $user): ?PublicKeyCredentialRequestOptions
 	{
 		Log::add('Creating PK request options', Log::DEBUG, 'plg_system_passwordless');
-		$registeredPublicKeyCredentialDescriptors    = is_null($user)
+		$registeredPublicKeyCredentialDescriptors = is_null($user)
 			? []
 			: $this->getPubKeyDescriptorsForUser($user);
 
@@ -306,7 +320,10 @@ class LibraryV4 extends AbstractAuthentication
 			->setExtensions($extensions);
 
 		// Save in session. This is used during the verification stage to prevent replay attacks.
-		$this->session->set('plg_system_passwordless.publicKeyCredentialRequestOptions', base64_encode(serialize($publicKeyCredentialRequestOptions)));
+		$this->session->set(
+			'plg_system_passwordless.publicKeyCredentialRequestOptions',
+			base64_encode(serialize($publicKeyCredentialRequestOptions))
+		);
 
 		return $publicKeyCredentialRequestOptions;
 	}
@@ -314,18 +331,23 @@ class LibraryV4 extends AbstractAuthentication
 	/**
 	 * @inheritDoc
 	 */
-    final public function validateAssertionResponse(string $data, ?User $user): PublicKeyCredentialSource
+	final public function validateAssertionResponse(string $data, ?User $user): PublicKeyCredentialSource
 	{
 		// Make sure the public key credential request options in the session are valid
-		$encodedPkOptions                  = $this->session->get('plg_system_passwordless.publicKeyCredentialRequestOptions', null);
+		$encodedPkOptions                  = $this->session->get(
+			'plg_system_passwordless.publicKeyCredentialRequestOptions', null
+		);
 		$serializedOptions                 = base64_decode($encodedPkOptions);
 		$publicKeyCredentialRequestOptions = unserialize($serializedOptions);
 
 		if (!is_object($publicKeyCredentialRequestOptions)
-			|| empty($publicKeyCredentialRequestOptions)
-			|| !($publicKeyCredentialRequestOptions instanceof PublicKeyCredentialRequestOptions))
+		    || empty($publicKeyCredentialRequestOptions)
+		    || !($publicKeyCredentialRequestOptions instanceof PublicKeyCredentialRequestOptions))
 		{
-			Log::add('Cannot retrieve valid plg_system_passwordless.publicKeyCredentialRequestOptions from the session', Log::NOTICE, 'plg_system_passwordless');
+			Log::add(
+				'Cannot retrieve valid plg_system_passwordless.publicKeyCredentialRequestOptions from the session',
+				Log::NOTICE, 'plg_system_passwordless'
+			);
 			throw new RuntimeException(Text::_('PLG_SYSTEM_PASSWORDLESS_ERR_CREATE_INVALID_LOGIN_REQUEST'));
 		}
 
@@ -469,9 +491,13 @@ class LibraryV4 extends AbstractAuthentication
 
 				if (!empty($clientDataJSON) && is_object($clientDataJSON) && isset($clientDataJSON->challenge))
 				{
-					$clientDataJSON->challenge = Base64UrlSafe::encodeUnpadded(Base64UrlSafe::decode($clientDataJSON->challenge));
+					$clientDataJSON->challenge = Base64UrlSafe::encodeUnpadded(
+						Base64UrlSafe::decode($clientDataJSON->challenge)
+					);
 
-					$decodedData->response->clientDataJSON = Base64UrlSafe::encodeUnpadded(json_encode($clientDataJSON));
+					$decodedData->response->clientDataJSON = Base64UrlSafe::encodeUnpadded(
+						json_encode($clientDataJSON)
+					);
 				}
 
 			}
@@ -533,7 +559,9 @@ class LibraryV4 extends AbstractAuthentication
 		foreach ($decodedData->response as $key => $value)
 		{
 
-			$decodedData->response->{$key} = Base64UrlSafe::encodeUnpadded(Base64::decode($decodedData->response->{$key}));
+			$decodedData->response->{$key} = Base64UrlSafe::encodeUnpadded(
+				Base64::decode($decodedData->response->{$key})
+			);
 		}
 
 		return json_encode($decodedData);

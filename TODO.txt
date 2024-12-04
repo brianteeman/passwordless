@@ -1,0 +1,17 @@
+Authenticator auto-detection
+    https://web.dev/articles/passkey-form-autofill
+    https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredential/isConditionalMediationAvailable_static
+    The credential needs to have mediation: conditional see https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get#mediation
+
+Plugin toggle for "no password" controls
+    Needs modification \Akeeba\Plugin\System\Passwordless\PluginTraits\UserLogin::isApplicableUser
+
+Force “no password” for certain user groups
+    Overrides user's preference
+
+Login: use the signal property to handle aborted logins
+    See https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get#signal
+    Use this to show Joomla error message instead of the default browser popup
+    Also handle exceptions see https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get#exceptions
+
+Joomla 4.4 compatibility

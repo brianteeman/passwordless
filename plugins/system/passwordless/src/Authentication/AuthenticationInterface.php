@@ -9,15 +9,15 @@ namespace Akeeba\Plugin\System\Passwordless\Authentication;
 
 defined('_JEXEC') or die();
 
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialCreationOptions;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialRequestOptions;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialSource;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialSourceRepository;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialUserEntity;
 use Exception;
 use Joomla\Application\ApplicationInterface;
 use Joomla\CMS\User\User;
 use Joomla\Session\SessionInterface;
-use Webauthn\PublicKeyCredentialCreationOptions;
-use Webauthn\PublicKeyCredentialRequestOptions;
-use Webauthn\PublicKeyCredentialSource;
-use Webauthn\PublicKeyCredentialSourceRepository;
-use Webauthn\PublicKeyCredentialUserEntity;
 
 interface AuthenticationInterface
 {

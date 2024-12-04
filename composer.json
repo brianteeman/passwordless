@@ -11,11 +11,49 @@
     }
   ],
   "config": {
-    "vendor-dir": "vendor"
+    "vendor-dir": "vendor",
+    "platform": {
+      "php": "8.1.999"
+    }
   },
   "require": {
-    "php": "^7.4|^8.0",
+    "php": "^8.1",
     "ext-json": "*",
-    "ext-openssl": "*"
+    "ext-openssl": "*",
+    "web-auth/webauthn-lib": "^4.9.0",
+    "laminas/laminas-diactoros": "^3.0.0"
+  },
+  "require-dev": {
+    "coenjacobs/mozart": "^0.7.0"
+  },
+  "extra" : {
+    "mozart" : {
+      "dep_namespace": "Akeeba\\Plugin\\System\\Passwordless\\Dependencies\\",
+      "dep_directory": "/plugins/system/passwordless/src/Dependencies/",
+      "classmap_directory": "/plugins/system/passwordless/src/classmap/",
+      "classmap_prefix": "AkPlgSysPwl_",
+      "delete_vendor_directories": false,
+      "packages": [
+        "web-auth/webauthn-lib",
+        "laminas/laminas-diactoros"
+      ],
+      "excluded_packages": [
+        "psr/event-dispatcher",
+        "psr/http-client",
+        "psr/http-message",
+        "psr/http-factory",
+        "psr/log"
+      ]
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "\"vendor/bin/mozart\" compose",
+      "composer dump-autoload"
+    ],
+    "post-update-cmd": [
+      "\"vendor/bin/mozart\" compose",
+      "composer dump-autoload"
+    ]
   }
 }

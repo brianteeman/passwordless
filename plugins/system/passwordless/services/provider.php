@@ -10,6 +10,7 @@ defined('_JEXEC') || die;
 use Akeeba\Plugin\System\Passwordless\Authentication\AbstractAuthentication;
 use Akeeba\Plugin\System\Passwordless\Authentication\AuthenticationInterface;
 use Akeeba\Plugin\System\Passwordless\CredentialRepository;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialSourceRepository;
 use Akeeba\Plugin\System\Passwordless\Extension\Passwordless;
 use Joomla\Application\ApplicationInterface;
 use Joomla\Application\SessionAwareWebApplicationInterface;
@@ -22,7 +23,6 @@ use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 use Joomla\Event\DispatcherInterface;
 use Joomla\Session\SessionInterface;
-use Webauthn\PublicKeyCredentialSourceRepository;
 
 return new class implements ServiceProviderInterface {
 	/**
@@ -36,6 +36,14 @@ return new class implements ServiceProviderInterface {
 	 */
 	public function register(Container $container)
 	{
+		require_once __DIR__ . '/../src/Dependencies/Laminas/Diactoros/functions/create_uploaded_file.php';
+		require_once __DIR__ . '/../src/Dependencies/Laminas/Diactoros/functions/marshal_headers_from_sapi.php';
+		require_once __DIR__ . '/../src/Dependencies/Laminas/Diactoros/functions/marshal_method_from_sapi.php';
+		require_once __DIR__ . '/../src/Dependencies/Laminas/Diactoros/functions/marshal_protocol_version_from_sapi.php';
+		require_once __DIR__ . '/../src/Dependencies/Laminas/Diactoros/functions/normalize_server.php';
+		require_once __DIR__ . '/../src/Dependencies/Laminas/Diactoros/functions/normalize_uploaded_files.php';
+		require_once __DIR__ . '/../src/Dependencies/Laminas/Diactoros/functions/parse_cookie_header.php';
+
 		$container->set(
 			PluginInterface::class,
 			function (Container $container) {

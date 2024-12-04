@@ -4,6 +4,9 @@
 
 ### Composer
 /vendor
+# Dependencies processed by Mozart
+/plugins/system/passwordless/src/Dependencies/*
+!/plugins/system/passwordless/src/Dependencies/README.txt
 
 ### NPM
 /node_modules

@@ -9,6 +9,7 @@ namespace Akeeba\Plugin\System\Passwordless\PluginTraits;
 
 defined('_JEXEC') or die();
 
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialSource;
 use Exception;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
@@ -17,7 +18,6 @@ use Joomla\CMS\User\User;
 use Joomla\CMS\User\UserFactoryInterface;
 use Joomla\Event\Event;
 use RuntimeException;
-use Webauthn\PublicKeyCredentialSource;
 
 /**
  * Ajax handler for akaction=create

@@ -27,9 +27,9 @@ use Joomla\Registry\Registry;
 use JsonException;
 use RuntimeException;
 use Throwable;
-use Webauthn\PublicKeyCredentialSource;
-use Webauthn\PublicKeyCredentialSourceRepository;
-use Webauthn\PublicKeyCredentialUserEntity;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialSource;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialSourceRepository;
+use Akeeba\Plugin\System\Passwordless\Dependencies\Webauthn\PublicKeyCredentialUserEntity;
 
 /**
  * Handles the storage of WebAuthn credentials in the database
