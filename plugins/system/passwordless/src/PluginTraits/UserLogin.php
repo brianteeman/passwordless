@@ -18,6 +18,7 @@ use Joomla\CMS\User\UserHelper;
 use Joomla\Database\DatabaseDriver;
 use Joomla\Database\ParameterType;
 use Joomla\Event\Event;
+use Joomla\Utilities\ArrayHelper;
 
 trait UserLogin
 {
@@ -72,16 +73,15 @@ trait UserLogin
 		}
 
 		// Redirect the user and display a message notifying them they have to log in with Passwordless.
+		$message = $this->params->get('nopassword_use_custom_message', 1)
+			? 'PLG_SYSTEM_PASSWORDLESS_ERR_NOPASSWORDLOGIN'
+			: 'JGLOBAL_AUTH_INVALID_PASS';
+
 		$this->getApplication()->enqueueMessage(
-			Text::_('PLG_SYSTEM_PASSWORDLESS_ERR_NOPASSWORDLOGIN'),
+			Text::_($message),
 			CMSApplication::MSG_WARNING
 		);
 
-		// -- This is intentional; it will confuse attackers by making impossible to tell if the password was wrong.
-		$this->getApplication()->enqueueMessage(
-			Text::_('JGLOBAL_AUTH_INVALID_PASS'),
-			CMSApplication::MSG_WARNING
-		);
 		$this->getApplication()->redirect($return);
 	}
 
@@ -120,9 +120,13 @@ trait UserLogin
 			return;
 		}
 
-		// Let's muddy the waters
+		// Enqueue a message
+		$message = $this->params->get('nopassword_use_custom_message', 1)
+			? 'PLG_SYSTEM_PASSWORDLESS_ERR_NOPASSWORDLOGIN'
+			: 'JGLOBAL_AUTH_INVALID_PASS';
+
 		$this->getApplication()->enqueueMessage(
-			Text::_('PLG_SYSTEM_PASSWORDLESS_ERR_NOPASSWORDLOGIN'),
+			Text::_($message),
 			CMSApplication::MSG_WARNING
 		);
 	}
@@ -176,6 +180,19 @@ trait UserLogin
 
 	private function getNoPasswordPreference(User $user): int
 	{
+		// Forced preference by user group.
+		$configuredGroups = $this->params->get('nopassword_groups', []) ?? [];
+		$configuredGroups = is_array($configuredGroups)
+			? $configuredGroups
+			: array_filter(
+				ArrayHelper::toInteger($configuredGroups)
+			);
+
+		if (!empty($configuredGroups) && !empty(array_intersect($user->getAuthorisedGroups(), $configuredGroups)))
+		{
+			return 1;
+		}
+
 		// Default: as per plugin options, fallback to password login always allowed.
 		$preference = $this->params->get('nopassword_default', 0) ?? 0;
 
@@ -204,8 +221,6 @@ trait UserLogin
 				$preference = 0;
 			}
 		}
-
-		// TODO Forced preference by user group
 
 		return $preference;
 	}

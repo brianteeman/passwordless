@@ -25,14 +25,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Plugin toggle for &quot;no password&quot; controls">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Global default value for the Password authentication field">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.ini" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/passwordless.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/passwordless.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserProfileFields.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserProfileFields.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +303,7 @@
       <workItem from="1732529136839" duration="60000" />
       <workItem from="1732699661019" duration="425000" />
       <workItem from="1733165345531" duration="25000" />
-      <workItem from="1733313352208" duration="22104000" />
+      <workItem from="1733313352208" duration="23179000" />
     </task>
     <task id="LOCAL-00015" summary="Show plugin options depending on Joomla version">
       <created>1597041771075</created>
@@ -651,7 +648,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670423063479</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -699,7 +696,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Option to create passkeys (resident keys)" />
     <MESSAGE value="Implement login with passkeys (resident keys)" />
     <MESSAGE value="Don't show the resident authenticator button when the feature is disabled" />
     <MESSAGE value="Add Apple attestation support" />
@@ -724,7 +720,8 @@
     <MESSAGE value="+ Private dependencies; no longer relying on what Joomla includes in its vendors folder" />
     <MESSAGE value="+ Passkey auto-detection" />
     <MESSAGE value="Plugin toggle for &quot;no password&quot; controls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Plugin toggle for &quot;no password&quot; controls" />
+    <MESSAGE value="Global default value for the Password authentication field" />
+    <option name="LAST_COMMIT_MESSAGE" value="Global default value for the Password authentication field" />
   </component>
   <component name="WordPressConfiguration">
     <wordpressPath />
