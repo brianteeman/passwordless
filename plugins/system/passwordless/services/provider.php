@@ -47,6 +47,22 @@ return new class implements ServiceProviderInterface {
 		$container->set(
 			PluginInterface::class,
 			function (Container $container) {
+				/**
+				 * Workaround weird Joomla! 4 autoloader issue.
+				 *
+				 * Even though psr/event-dispatcher is installed in the libraries/vendor/psr/event-dispatcher directory
+				 * as a dependency of the symfony/event-dispatcher-contracts package, the Composer autoloader in the
+				 * shipped Joomla! 4 releases does not register its namespace.
+				 *
+				 * This is weird, because checking out the 4.4-dev Git branch of joomla/joomla-cms and running `composer
+				 * install` does result in an autoloader which correctly registers this namespace. Big WTF moment which
+				 * wasted a lot more time than I would've liked, but ultimately trivially addressed with this two-liner.
+				 */
+				if (version_compare(JVERSION, '5.0.0', 'lt'))
+				{
+					JLoader::registerNamespace('Psr\\EventDispatcher', JPATH_LIBRARIES . '/vendor/psr/event-dispatcher/src');
+				}
+
 				$config  = (array) PluginHelper::getPlugin('system', 'passwordless');
 				$subject = $container->get(DispatcherInterface::class);
 

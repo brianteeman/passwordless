@@ -1,4 +1,0 @@
-Force “no password” for certain user groups
-    Overrides user's preference
-
-Joomla 4.4 compatibility
