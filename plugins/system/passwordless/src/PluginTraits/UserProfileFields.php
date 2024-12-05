@@ -136,6 +136,10 @@ trait UserProfileFields
 		{
 			$form->removeField('noPassword', 'passwordless');
 		}
+		else
+		{
+			$form->setFieldAttribute('noPassword', 'default', $this->params->get('nopassword_default', 0), 'passwordless');
+		}
 	}
 
 	/**

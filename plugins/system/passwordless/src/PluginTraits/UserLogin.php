@@ -176,10 +176,8 @@ trait UserLogin
 
 	private function getNoPasswordPreference(User $user): int
 	{
-		// TODO Get default preference from plugin options
-
-		// Default: password login is allowed.
-		$preference = 0;
+		// Default: as per plugin options, fallback to password login always allowed.
+		$preference = $this->params->get('nopassword_default', 0) ?? 0;
 
 		// User preference, if allowed.
 		if ($this->params->get('nopassword_controls', 1))
