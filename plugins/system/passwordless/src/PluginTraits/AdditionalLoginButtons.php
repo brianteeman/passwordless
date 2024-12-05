@@ -14,6 +14,7 @@ use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Document\HtmlDocument;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\User\UserHelper;
 use Joomla\Event\Event;
@@ -126,6 +127,10 @@ trait AdditionalLoginButtons
 
 		// Store the current URL as the default return URL after login (or failure)
 		$this->getApplication()->getSession()->set('plg_system_passwordless.returnUrl', Uri::current());
+
+		$document->addScriptOptions('plg_system_passwordless', [
+			'autodetect' => (bool) $this->params->get('autodetect', 0),
+		]);
 	}
 
 	/**

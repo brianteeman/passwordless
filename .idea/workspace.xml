@@ -25,35 +25,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Use Babel from BuildFiles&#10;&#10;Reduces the footprint of the working copy.">
-      <change afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Dependencies/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Akeeba Passwordless Authentication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Akeeba Passwordless Authentication.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeception.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeception.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phing.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="+ Private dependencies; no longer relying on what Joomla includes in its vendors folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/build.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/services/provider.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/services/provider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/AbstractAuthentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/AbstractAuthentication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/AuthenticationInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/AuthenticationInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV3.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV3/AndroidKeyAttestationStatementSupport.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV3/AppleAttestationStatementSupport.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV3/FidoU2FAttestationStatementSupport.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV3/Server.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV4.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Authentication/LibraryV4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/CredentialRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/CredentialRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerCreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerCreate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerInitCreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerInitCreate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update/plg_system_passwordless.xml" beforeDir="false" afterPath="$PROJECT_DIR$/update/plg_system_passwordless.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.ini" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.sys.ini" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.sys.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.es6" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/passwordless.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/passwordless.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AdditionalLoginButtons.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AdditionalLoginButtons.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,7 +309,7 @@
       <workItem from="1732529136839" duration="60000" />
       <workItem from="1732699661019" duration="425000" />
       <workItem from="1733165345531" duration="25000" />
-      <workItem from="1733313352208" duration="12118000" />
+      <workItem from="1733313352208" duration="18906000" />
     </task>
     <task id="LOCAL-00015" summary="Show plugin options depending on Joomla version">
       <created>1597041771075</created>
@@ -672,7 +654,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670423063479</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -720,7 +702,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Plugin causes an error when saving a user from Joomla's Users page" />
     <MESSAGE value="Refactor to the state of my core PR" />
     <MESSAGE value="Adding missing dependencies and make sure it all works" />
     <MESSAGE value="Option to create passkeys (resident keys)" />
@@ -745,7 +726,8 @@
     <MESSAGE value="Workaround for Joomla extensions update sucking&#10;&#10;Joomla does not OPcache-invalidate files when updating an extension. I have to do it by myself." />
     <MESSAGE value="Post-installation script update" />
     <MESSAGE value="Use Babel from BuildFiles&#10;&#10;Reduces the footprint of the working copy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Use Babel from BuildFiles&#10;&#10;Reduces the footprint of the working copy." />
+    <MESSAGE value="+ Private dependencies; no longer relying on what Joomla includes in its vendors folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ Private dependencies; no longer relying on what Joomla includes in its vendors folder" />
   </component>
   <component name="WordPressConfiguration">
     <wordpressPath />

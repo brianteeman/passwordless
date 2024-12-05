@@ -4,18 +4,16 @@
  * @license   GNU General Public License version 3, or later
  */
 
-window.Joomla              = window.Joomla || {};
-window.akeeba              = window.akeeba || {};
-window.akeeba.Passwordless = window.akeeba.Passwordless || {};
-
 /**
  * Akeeba Passwordless Login client-side implementation
  *
  * This is the EcmaScript 6+ source of the client-side implementation. It is meant to be transpiled to ES5.1 (plain old
  * JavaScript) with Babel. The actual file being loaded can be found in dist/passwordless.js.
  */
-((Joomla, Passwordless, document) => {
+((Joomla, document) => {
 	"use strict";
+
+	var Passwordless = {};
 
 	/**
 	 * Converts a simple object containing query string parameters to a single, escaped query string.
@@ -138,9 +136,10 @@ window.akeeba.Passwordless = window.akeeba.Passwordless || {};
 	 * Handles the browser response for the user interaction with the authenticator. Redirects to an
 	 * internal page which handles the login server-side.
 	 *
-	 * @param {  Object}  publicKey     Public key request options, returned from the server
+	 * @param   {Object}   publicKey    Public key request options, returned from the server
+	 * @param   {boolean}  conditional  Set to true to enable the conditional UI
 	 */
-	Passwordless.handleLoginChallenge = (publicKey) => {
+	Passwordless.handleLoginChallenge = (publicKey, conditional = false) => {
 		const arrayToBase64String = (a) => btoa(String.fromCharCode(...a));
 
 		const base64url2base64 = (input) => {
@@ -179,10 +178,21 @@ window.akeeba.Passwordless = window.akeeba.Passwordless || {};
 			});
 		}
 
-		console.log(publicKey);
+		let credOptions = {
+			publicKey: publicKey
+		};
 
-		navigator.credentials.get({publicKey})
-			.then((data) => {
+		if (conditional)
+		{
+			const abortController = new AbortController();
+			credOptions.signal = abortController.signal;
+			credOptions.mediation = 'conditional';
+		}
+
+		console.log(credOptions);
+
+		navigator.credentials.get(credOptions)
+				   .then((data) => {
 				const publicKeyCredential = {
 					id:       data.id,
 					type:     data.type,
@@ -205,7 +215,7 @@ window.akeeba.Passwordless = window.akeeba.Passwordless || {};
 					+ `&format=raw&akaction=login&encoding=redirect&data=${
 						btoa(JSON.stringify(publicKeyCredential))}`;
 			})
-			.catch((error) => {
+				   .catch((error) => {
 				// Example: timeout, interaction refused...
 				Passwordless.handleLoginError(error);
 			});
@@ -216,23 +226,15 @@ window.akeeba.Passwordless = window.akeeba.Passwordless || {};
 	 * for the user.
 	 *
 	 * @param   {string}   formId       The login form's or login module's HTML ID
+	 * @param   {boolean}  conditional  Set to true to enable the conditional UI
 	 *
 	 * @returns {boolean}  Always FALSE to prevent BUTTON elements from reloading the page.
 	 */
 	// eslint-disable-next-line no-unused-vars
-	Passwordless.login = (formId) => {
+	Passwordless.login = (formId, conditional = false) => {
 		const elFormContainer = document.getElementById(formId);
 		const elUsername      = Passwordless.lookForField(elFormContainer, 'input[name=username]');
 		const elReturn        = Passwordless.lookForField(elFormContainer, 'input[name=return]');
-		const pluginParams    = Joomla.getOptions('plg_system_passwordless');
-		const allowNoUsername = true;
-
-		if (!allowNoUsername && elUsername === null)
-		{
-			Passwordless.handleLoginError(Joomla.Text._("PLG_SYSTEM_PASSWORDLESS_ERR_CANNOT_FIND_USERNAME"));
-
-			return false;
-		}
 
 		const username  = elUsername?.value ?? '';
 		const returnUrl = elReturn ? elReturn.value : null;
@@ -251,11 +253,10 @@ window.akeeba.Passwordless = window.akeeba.Passwordless || {};
 		postBackData[Joomla.getOptions('csrf.token')] = 1;
 
 		const paths = Joomla.getOptions('system.paths');
-		console.log(paths);
+		const url   = paths ? (paths.base + '/index.php') : window.location.pathname;
 
 		Joomla.request({
-			url:    `${paths ? `${paths.base}/index.php` : window.location.pathname}?${Joomla.getOptions(
-				'csrf.token')}=1`,
+			url:    url,
 			method: "POST",
 			data:   Passwordless.interpolateParameters(postBackData),
 			onSuccess(rawResponse)
@@ -283,7 +284,7 @@ window.akeeba.Passwordless = window.akeeba.Passwordless || {};
 
 				console.log(jsonData);
 
-				Passwordless.handleLoginChallenge(jsonData);
+				Passwordless.handleLoginChallenge(jsonData, conditional);
 			},
 			onError: (xhr) => {
 				Passwordless.handleLoginError(`${xhr.status} ${xhr.statusText}`);
@@ -293,26 +294,96 @@ window.akeeba.Passwordless = window.akeeba.Passwordless || {};
 		return false;
 	};
 
-	Passwordless.initLogin = () => {
-		const loginButtons = [].slice.call(document.querySelectorAll(".plg_system_passwordless_login_button"));
+	Passwordless.initLogin = async () => {
+		// Find all login buttons on the page
+		const loginButtons  = [].slice.call(document.querySelectorAll(".plg_system_passwordless_login_button"));
 
-		if (loginButtons.length)
+		// If there are no login buttons we can return immediately
+		if (!loginButtons.length)
 		{
-			loginButtons.forEach((button) => {
-				button.addEventListener("click", (e) => {
-					e.preventDefault();
-
-					const currentTarget = e.currentTarget;
-
-					Passwordless.login(
-						currentTarget.getAttribute("data-passwordless-form")
-					);
-				});
-			});
+			return;
 		}
+
+		// Check if WebAuthn and conditional mediation for it are available
+		const hasWebAuthn   = typeof window.PublicKeyCredential !== "undefined";
+		let formNames = [];
+
+		const pluginOptions   = Joomla.getOptions("plg_system_passwordless");
+		const allowAutoDetect = pluginOptions?.autodetect ?? false;
+		let canAutodetect     = false;
+
+		if (allowAutoDetect && hasWebAuthn && typeof PublicKeyCredential.isConditionalMediationAvailable !== "undefined")
+		{
+			canAutodetect = await PublicKeyCredential.isConditionalMediationAvailable();
+		}
+
+		console.log('Passkey autodetection: ' + (canAutodetect ? 'enabled' : 'disabled'));
+
+		// Process all login buttons
+		loginButtons.forEach((button) =>
+		{
+			// If WebAuthn is not available let's hide the button and get out of here.
+			if (!hasWebAuthn)
+			{
+				button.style.display = "none";
+
+				return;
+			}
+
+			// Stash the ID of the form the login button belongs to. We'll need it later.
+			formNames.push(button.getAttribute("data-passwordless-form"))
+
+			// Add the click handler.
+			button.addEventListener("click", (e) =>
+			{
+				e.preventDefault();
+
+				const currentTarget = e.currentTarget;
+
+				Passwordless.login(
+					currentTarget.getAttribute("data-passwordless-form")
+				);
+			});
+		});
+
+		// The following code only applies when conditional mediation is available. If it's not available, go away.
+		if (!formNames.length || !canAutodetect)
+		{
+			return;
+		}
+
+		let lastFormId = null;
+
+		// This sets the autocomplete attribute of the username field of every unique login form.
+		[...new Set(formNames)].forEach((formId) => {
+            const elFormContainer = document.getElementById(formId);
+
+            if (!elFormContainer)
+            {
+                return;
+            }
+
+            const elUsername = Passwordless.lookForField(elFormContainer, "input[name=username]");
+
+            if (!elUsername)
+            {
+                return;
+            }
+
+            elUsername.setAttribute("autocomplete", "username webauthn");
+
+			lastFormId = formId
+		});
+
+		if (!lastFormId)
+		{
+			return;
+		}
+
+		Passwordless.login(lastFormId, true);
 	}
 
 	// Initialization. Runs on DOM content loaded since this script is always loaded deferred.
 	Passwordless.initLogin();
 
-})(Joomla, window.akeeba.Passwordless, document);
+})(Joomla, document);
