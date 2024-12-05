@@ -1,6 +1,3 @@
-Plugin toggle for "no password" controls
-    Needs modification \Akeeba\Plugin\System\Passwordless\PluginTraits\UserLogin::isApplicableUser
-
 Force “no password” for certain user groups
     Overrides user's preference
 

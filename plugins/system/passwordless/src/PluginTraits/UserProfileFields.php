@@ -131,6 +131,11 @@ trait UserProfileFields
 		Log::add('Injecting Akeeba Passwordless Login fields in user profile edit page', Log::INFO, 'plg_system_passwordless');
 		Form::addFormPath(JPATH_PLUGINS . '/' . $this->_type . '/' . $this->_name . '/forms');
 		$form->loadFile('passwordless', false);
+
+		if (!$this->params->get('nopassword_controls', 1))
+		{
+			$form->removeField('noPassword', 'passwordless');
+		}
 	}
 
 	/**

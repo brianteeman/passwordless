@@ -24,7 +24,7 @@ trait UserLogin
 	/**
 	 * Handle a successful login.
 	 *
-	 * If the logged in user has one or more passwordless methods and they just logged in with a username and password
+	 * If the logged-in user has one or more passwordless methods, and they just logged in with a username and password
 	 * we will decline the login and print a custom message. This is the same set of messages printed when they use the
 	 * wrong password, making it impossible for attackers to know if they have guessed the correct username.
 	 *
@@ -48,7 +48,7 @@ trait UserLogin
 		$user = $this->getLoginUserObject($userData);
 
 		// Has the user disabled password authentication on their user account?
-		if (!$this->isApplicableUser($user))
+		if (!$this->isPasswordlessOnlyUser($user))
 		{
 			return;
 		}
@@ -64,10 +64,10 @@ trait UserLogin
 		$return = !empty($return) ? @base64_decode($return) : '';
 		$return = $return ?: Uri::base();
 
-		// For security reasons we cannot allow a return IRL that's outside the current site.
+		// For security reasons we cannot allow a return URL that's outside the current site.
 		if (!Uri::isInternal($return))
 		{
-			// If the URL wasn't internal redirect to the site's root.
+			// If the URL wasn't an internal redirect to the site's root.
 			$return = Uri::base();
 		}
 
@@ -76,6 +76,7 @@ trait UserLogin
 			Text::_('PLG_SYSTEM_PASSWORDLESS_ERR_NOPASSWORDLOGIN'),
 			CMSApplication::MSG_WARNING
 		);
+
 		// -- This is intentional; it will confuse attackers by making impossible to tell if the password was wrong.
 		$this->getApplication()->enqueueMessage(
 			Text::_('JGLOBAL_AUTH_INVALID_PASS'),
@@ -91,8 +92,8 @@ trait UserLogin
 	 * least one Passwordless method enabled. This means that both successful and failed logins for these users will
 	 * display the same set of messages, making it virtually impossible for an attacker to discern if they guessed the
 	 * right password or not. Yes, it also tells the attacker that the specific username exists, has passwordless
-	 * authentication enabled and the user chose not to login with a username and password. So what? Usernames should be
-	 * treated as PUBLIC information.
+	 * authentication enabled, and the user chose not to log in with a username and password. This is NOT a security
+	 * issue because passkeys –unlike passwords– cannot be brute-forced.
 	 *
 	 * @param   Event  $event  The event we are handling
 	 *
@@ -114,7 +115,7 @@ trait UserLogin
 		$user = $this->getLoginUserObject($response);
 
 		// Has the user disabled password authentication on their user account?
-		if (!$this->isApplicableUser($user))
+		if (!$this->isPasswordlessOnlyUser($user))
 		{
 			return;
 		}
@@ -126,55 +127,89 @@ trait UserLogin
 		);
 	}
 
-	private function isApplicableUser(?User $user): bool
+	/**
+	 * Is the user only allowed to use passwordless authentication?
+	 *
+	 * @param   User|null  $user  The user object. NULL for current user.
+	 *
+	 * @return  bool  TRUE if the user can only log into the site using passwordless authentication.
+	 *
+	 * @since   2.0.0
+	 */
+	private function isPasswordlessOnlyUser(?User $user): bool
 	{
 		if (empty($user) || $user->guest || empty($user->id) || $user->id <= 0)
 		{
 			return false;
 		}
 
-		// Does this user have passwordless methods?
+		// Get the user's passwordless authentication methods.
 		$entity      = $this->authenticationHelper->getUserEntity($user);
 		$credentials = $this->authenticationHelper->getCredentialsRepository()->findAllForUserEntity($entity);
 
+		// There is no passwordless authentication method available. Allow password login.
 		if (count($credentials) < 1)
 		{
 			return false;
 		}
 
-		// Does this user prefer to only use passwordless login?
-		/** @var DatabaseDriver $db */
-		$db         = $this->getDatabase();
-		$userId     = $user->id;
-		$profileKey = 'passwordless.noPassword';
-		$query      = $db->getQuery(true)
-		                 ->select($db->quoteName('profile_value'))
-		                 ->from($db->quoteName('#__user_profiles'))
-		                 ->where($db->quoteName('user_id') . ' = :user_id')
-		                 ->where($db->quoteName('profile_key') . ' = :profile_key')
-		                 ->bind(':user_id', $userId, ParameterType::INTEGER)
-		                 ->bind(':profile_key', $profileKey);
+		// Get the password login preference applicable to this user.
+		$preference = $this->getNoPasswordPreference($user);
 
-		try
+		// Parse the preference
+		switch ($preference)
 		{
-			$preference = $db->setQuery($query)->loadResult() ?: 0;
+			// 0: Password authentication is always allowed
+			default:
+			case 0:
+				return false;
+
+			// 1: Password authentication is always forbidden
+			case 1:
+				return true;
+
+			// 2: Password authentication is always forbidden if the user has two or more passwordless methods.
+			case 2:
+				return count($credentials) > 1;
 		}
-		catch (\Exception $e)
+	}
+
+	private function getNoPasswordPreference(User $user): int
+	{
+		// TODO Get default preference from plugin options
+
+		// Default: password login is allowed.
+		$preference = 0;
+
+		// User preference, if allowed.
+		if ($this->params->get('nopassword_controls', 1))
 		{
-			$preference = 0;
+			// Does this user prefer to only use passwordless login?
+			/** @var DatabaseDriver $db */
+			$db         = $this->getDatabase();
+			$userId     = $user->id;
+			$profileKey = 'passwordless.noPassword';
+			$query      = $db->getQuery(true)
+				->select($db->quoteName('profile_value'))
+				->from($db->quoteName('#__user_profiles'))
+				->where($db->quoteName('user_id') . ' = :user_id')
+				->where($db->quoteName('profile_key') . ' = :profile_key')
+				->bind(':user_id', $userId, ParameterType::INTEGER)
+				->bind(':profile_key', $profileKey);
+
+			try
+			{
+				$preference = $db->setQuery($query)->loadResult() ?: 0;
+			}
+			catch (\Exception $e)
+			{
+				$preference = 0;
+			}
 		}
 
-		if ($preference == 0)
-		{
-			return false;
-		}
+		// TODO Forced preference by user group
 
-		if ($preference == 1)
-		{
-			return true;
-		}
-
-		return count($credentials) > 1;
+		return $preference;
 	}
 
 	/**

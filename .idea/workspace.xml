@@ -25,17 +25,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="+ Private dependencies; no longer relying on what Joomla includes in its vendors folder">
+    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="+ Passkey auto-detection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.ini" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.sys.ini" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.sys.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.es6" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/passwordless.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/passwordless.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AdditionalLoginButtons.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AdditionalLoginButtons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserProfileFields.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserProfileFields.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,7 +304,7 @@
       <workItem from="1732529136839" duration="60000" />
       <workItem from="1732699661019" duration="425000" />
       <workItem from="1733165345531" duration="25000" />
-      <workItem from="1733313352208" duration="18906000" />
+      <workItem from="1733313352208" duration="20345000" />
     </task>
     <task id="LOCAL-00015" summary="Show plugin options depending on Joomla version">
       <created>1597041771075</created>
@@ -654,7 +649,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670423063479</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -702,7 +697,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor to the state of my core PR" />
     <MESSAGE value="Adding missing dependencies and make sure it all works" />
     <MESSAGE value="Option to create passkeys (resident keys)" />
     <MESSAGE value="Implement login with passkeys (resident keys)" />
@@ -727,7 +721,8 @@
     <MESSAGE value="Post-installation script update" />
     <MESSAGE value="Use Babel from BuildFiles&#10;&#10;Reduces the footprint of the working copy." />
     <MESSAGE value="+ Private dependencies; no longer relying on what Joomla includes in its vendors folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Private dependencies; no longer relying on what Joomla includes in its vendors folder" />
+    <MESSAGE value="+ Passkey auto-detection" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ Passkey auto-detection" />
   </component>
   <component name="WordPressConfiguration">
     <wordpressPath />
