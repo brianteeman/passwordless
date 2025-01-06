@@ -33,7 +33,7 @@ In the past, I had been relicensing my GPLv3-or-later code to GPLv2-or-later to 
 
 Akeeba Passwordless Login – An improved WebAuthn and passkey login solution for Joomla!
 
-Copyright (C) 2020–2024 Akeeba Ltd
+Copyright (C) 2020–2025 Akeeba Ltd
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
 License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later

@@ -25,10 +25,42 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Select whether a custom message is shown when password authentication is not allowed.">
+    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Joomla! 4 compatibility">
+      <change beforePath="$PROJECT_DIR$/.idea/Akeeba Passwordless Authentication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Akeeba Passwordless Authentication.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/forms/passwordless.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/forms/passwordless.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.ini" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/layout/akeeba/passwordless/manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/layout/akeeba/passwordless/manage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.es6" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.es6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/passwordless.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/passwordless.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/services/provider.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/services/provider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/install.mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/install.mysql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/install.postgresql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/install.postgresql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/uninstall.mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/uninstall.mysql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/uninstall.postgresql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/uninstall.postgresql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/updates/mysql/1.0.0.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/updates/mysql/1.0.0.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/updates/postgresql/1.0.0.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/updates/postgresql/1.0.0.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Exception/AjaxNonCmsAppException.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Exception/AjaxNonCmsAppException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Extension/Passwordless.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Extension/Passwordless.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Field/PasswordlessField.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Field/PasswordlessField.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AdditionalLoginButtons.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AdditionalLoginButtons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerChallenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerChallenge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerCreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerCreate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerDelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerDelete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerSaveLabel.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerSaveLabel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/EventReturnAware.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/EventReturnAware.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/Migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/Migration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserDeletion.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserDeletion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserProfileFields.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserProfileFields.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +70,12 @@
   <component name="ChangesViewManager">
     <option name="groupingKeys">
       <option value="directory" />
+    </option>
+  </component>
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/plugins/system/passwordless/src/Dependencies/Symfony/Polyfill/Uuid/composer.json" />
+      <option value="$PROJECT_DIR$/plugins/system/passwordless/src/Dependencies/Symfony/Component/Uid/composer.json" />
     </option>
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
@@ -99,7 +137,7 @@
       </server>
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="php">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.3">
     <include_path>
       <path value="$PROJECT_DIR$/../../master/joomla5" />
       <path value="$PROJECT_DIR$/../../dionysopoulos/joomlatypehints/generated_hints" />
@@ -147,31 +185,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "development",
-    "last_opened_file_path": "/home/nicholas/Projects/j4-akeeba/passwordless",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "copyright.profiles",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nicholas/Projects/j4-akeeba/passwordless&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright.profiles&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "GitIgnore",
-      "PHP",
-      "HTTP Request"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;GitIgnore&quot;,
+      &quot;PHP&quot;,
+      &quot;HTTP Request&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/plugins/system/passwordless/media/images" />
@@ -226,8 +264,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PS-243.21565.202" />
-        <option value="bundled-php-predefined-a98d8de5180a-5fbe0c30323e-com.jetbrains.php.sharedIndexes-PS-243.21565.202" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PS-243.22562.233" />
+        <option value="bundled-php-predefined-a98d8de5180a-7980c7aaca61-com.jetbrains.php.sharedIndexes-PS-243.22562.233" />
         <option value="php-symfony_console-5543a6ebd44f-ead811f9" />
       </set>
     </attachedChunks>
@@ -302,7 +340,8 @@
       <workItem from="1732529136839" duration="60000" />
       <workItem from="1732699661019" duration="425000" />
       <workItem from="1733165345531" duration="25000" />
-      <workItem from="1733313352208" duration="29149000" />
+      <workItem from="1733313352208" duration="29171000" />
+      <workItem from="1736171405310" duration="99000" />
     </task>
     <task id="LOCAL-00015" summary="Show plugin options depending on Joomla version">
       <created>1597041771075</created>
@@ -647,7 +686,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670423063479</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,7 +734,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Don't show the resident authenticator button when the feature is disabled" />
     <MESSAGE value="Add Apple attestation support" />
     <MESSAGE value="Simplify" />
     <MESSAGE value="Remove tooltips from Add authenticator buttons&#10;&#10;Also redo the interface to look cleaner" />
@@ -720,7 +758,8 @@
     <MESSAGE value="Plugin toggle for &quot;no password&quot; controls" />
     <MESSAGE value="Global default value for the Password authentication field" />
     <MESSAGE value="Select whether a custom message is shown when password authentication is not allowed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Select whether a custom message is shown when password authentication is not allowed." />
+    <MESSAGE value="Joomla! 4 compatibility" />
+    <option name="LAST_COMMIT_MESSAGE" value="Joomla! 4 compatibility" />
   </component>
   <component name="WordPressConfiguration">
     <wordpressPath />
