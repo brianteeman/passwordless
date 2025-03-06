@@ -25,42 +25,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Joomla! 4 compatibility">
-      <change beforePath="$PROJECT_DIR$/.idea/Akeeba Passwordless Authentication.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Akeeba Passwordless Authentication.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Update copyright">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/forms/passwordless.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/forms/passwordless.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.ini" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/language/en-GB/plg_system_passwordless.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/layout/akeeba/passwordless/manage.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/layout/akeeba/passwordless/manage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.es6" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/login.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.es6" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.es6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/media/js/manage.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/passwordless.xml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/passwordless.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/services/provider.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/services/provider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/install.mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/install.mysql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/install.postgresql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/install.postgresql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/uninstall.mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/uninstall.mysql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/uninstall.postgresql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/uninstall.postgresql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/updates/mysql/1.0.0.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/updates/mysql/1.0.0.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/sql/updates/postgresql/1.0.0.sql" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/sql/updates/postgresql/1.0.0.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Exception/AjaxNonCmsAppException.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Exception/AjaxNonCmsAppException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Extension/Passwordless.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Extension/Passwordless.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/Field/PasswordlessField.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/Field/PasswordlessField.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AdditionalLoginButtons.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AdditionalLoginButtons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerChallenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerChallenge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerCreate.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerCreate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerDelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerDelete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerSaveLabel.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/AjaxHandlerSaveLabel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/EventReturnAware.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/EventReturnAware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/Migration.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/Migration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserDeletion.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserDeletion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserProfileFields.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/system/passwordless/src/PluginTraits/UserProfileFields.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +103,7 @@
       </server>
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.3">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="php">
     <include_path>
       <path value="$PROJECT_DIR$/../../master/joomla5" />
       <path value="$PROJECT_DIR$/../../dionysopoulos/joomlatypehints/generated_hints" />
@@ -264,8 +230,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PS-243.22562.233" />
-        <option value="bundled-php-predefined-a98d8de5180a-7980c7aaca61-com.jetbrains.php.sharedIndexes-PS-243.22562.233" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-PS-243.23654.168" />
+        <option value="bundled-php-predefined-a98d8de5180a-4c3855d0ab16-com.jetbrains.php.sharedIndexes-PS-243.23654.168" />
         <option value="php-symfony_console-5543a6ebd44f-ead811f9" />
       </set>
     </attachedChunks>
@@ -341,7 +307,8 @@
       <workItem from="1732699661019" duration="425000" />
       <workItem from="1733165345531" duration="25000" />
       <workItem from="1733313352208" duration="29171000" />
-      <workItem from="1736171405310" duration="99000" />
+      <workItem from="1736171405310" duration="112000" />
+      <workItem from="1739127139233" duration="43000" />
     </task>
     <task id="LOCAL-00015" summary="Show plugin options depending on Joomla version">
       <created>1597041771075</created>
@@ -686,7 +653,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670423063479</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -734,7 +701,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Apple attestation support" />
     <MESSAGE value="Simplify" />
     <MESSAGE value="Remove tooltips from Add authenticator buttons&#10;&#10;Also redo the interface to look cleaner" />
     <MESSAGE value="User-controlled option to disable logins with password" />
@@ -759,7 +725,8 @@
     <MESSAGE value="Global default value for the Password authentication field" />
     <MESSAGE value="Select whether a custom message is shown when password authentication is not allowed." />
     <MESSAGE value="Joomla! 4 compatibility" />
-    <option name="LAST_COMMIT_MESSAGE" value="Joomla! 4 compatibility" />
+    <MESSAGE value="Update copyright" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update copyright" />
   </component>
   <component name="WordPressConfiguration">
     <wordpressPath />
