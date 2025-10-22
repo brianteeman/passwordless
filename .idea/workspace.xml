@@ -26,6 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e094fe1-3f87-4fef-876b-11d12c079142" name="Default Changelist" comment="Update copyright">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +68,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nikosdion&quot;
+  }
+}</component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -75,6 +82,12 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:akeeba/passwordless.git&quot;,
+    &quot;accountId&quot;: &quot;6ab30545-06ea-49cf-b1fd-fd0afb609eca&quot;
+  }
+}</component>
   <component name="JoomlaConfiguration" enabled="true">
     <joomlaConfigPath>$USER_HOME$/Sites/boot4/configuration.php</joomlaConfigPath>
     <joomlaPath>$PROJECT_DIR$/../../master/joomla4</joomlaPath>
@@ -103,7 +116,7 @@
       </server>
     </servers>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.4">
     <include_path>
       <path value="$PROJECT_DIR$/../../master/joomla5" />
       <path value="$PROJECT_DIR$/../../dionysopoulos/joomlatypehints/generated_hints" />
@@ -158,6 +171,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "development",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/home/nicholas/Projects/j4-akeeba/passwordless",
@@ -232,10 +246,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PS-251.27812.52" />
-        <option value="bundled-php-predefined-a98d8de5180a-e5747d4f5a45-com.jetbrains.php.sharedIndexes-PS-251.27812.52" />
-        <option value="php-phpstan_phpstan-88dc7a6578bb-14563eff" />
-        <option value="php-symfony_console-88dc7a6578bb-a8d13f91" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PS-252.26830.95" />
+        <option value="bundled-php-predefined-a98d8de5180a-9b563d34894c-com.jetbrains.php.sharedIndexes-PS-252.26830.95" />
       </set>
     </attachedChunks>
   </component>
@@ -315,6 +327,8 @@
       <workItem from="1746776217271" duration="39000" />
       <workItem from="1749205013498" duration="13000" />
       <workItem from="1754313282200" duration="38000" />
+      <workItem from="1760342573988" duration="6000" />
+      <workItem from="1761140843827" duration="7000" />
     </task>
     <task id="LOCAL-00015" summary="Show plugin options depending on Joomla version">
       <created>1597041771075</created>
